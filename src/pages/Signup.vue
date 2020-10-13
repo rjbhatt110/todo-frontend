@@ -70,10 +70,10 @@ export default {
   name: "signup",
   data() {
     return {
-      firstName: "demo2",
-      lastName: "demo1",
-      email: "demo@demo.com",
-      password: "hello123",
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: "",
     };
   },
   computed: {

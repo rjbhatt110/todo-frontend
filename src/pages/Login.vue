@@ -47,8 +47,8 @@ export default {
   name: "login",
   data() {
     return {
-      email: "rjbhatt110@gmail.com",
-      password: "hello123",
+      email: "",
+      password: "",
     };
   },
   computed: {
