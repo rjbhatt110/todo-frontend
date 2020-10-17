@@ -99,10 +99,19 @@ export default {
         todo: this.value,
         check: false,
       };
-      this.$store.dispatch(CREATE_TODO, insertTodo);
+      this.$store.dispatch(CREATE_TODO, insertTodo).then(() => {
+        this.value = null;
+        setTimeout(() => {
+          this.$store.dispatch(GET_TODO, this.currentUser._id);
+        }, 500);
+      });
     },
     deleteTodo(todo) {
-      this.$store.dispatch(DELETE_TODO, todo._id);
+      this.$store.dispatch(DELETE_TODO, todo._id).then(()=>{
+        setTimeout(() => {
+          this.$store.dispatch(GET_TODO, this.currentUser._id);
+        }, 500);
+      })
     },
     updateTodo(todo) {
       this.$store.dispatch(UPDATE_TODO, todo);
